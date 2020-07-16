@@ -4,7 +4,8 @@ import { useForm, usePlugin, useCMS } from 'tinacms'
 // 5. Import `InlineForm`
 // 9. Import `InlineBlocks`
 import { InlineForm, InlineBlocks } from 'react-tinacms-inline'
-import { Hero } from './components/Hero'
+// 13. Import `heroBlock`
+import { heroBlock } from './components/Hero'
 import data from './data/data.json'
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
         // 6. Wrap `InlineForm` around `Hero`, pass the form
         <div className="home">
             <InlineForm form={form}>
-                <Hero {...pageData} />
+                {/* 14. Remove this >>>> <Hero {...pageData} /> */}
                 {/* 10. Import `InlineBlocks` */}
                 <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
             </InlineForm>
@@ -38,5 +39,6 @@ export default function Home() {
 
 /* 11. Define BLOCKS constant (config) */
 const HOME_BLOCKS = {
-    /** We will define blocks here later */
+    /** 14. Add heroBlock */
+    hero: heroBlock
 }
