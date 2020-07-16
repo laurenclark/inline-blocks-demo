@@ -27,7 +27,11 @@ export const heroBlock = {
     // and adding new blocks. Notice the index being passed as props to BlockControls — this
     //helps to keep track of the block order.
     Component: ({ index }) => (
-        <BlocksControls index={index}>
+        <BlocksControls
+            index={index}
+            focusRing={{ offset: { x: -10, y: -18 }, borderRadius: 0 }}
+            insetControls
+        >
             <Hero />
         </BlocksControls>
     ),
