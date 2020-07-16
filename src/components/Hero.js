@@ -1,6 +1,7 @@
 import React from 'react'
 // 7. Import `InlineTextarea`
-import { InlineTextarea } from 'react-tinacms-inline'
+// 11. Import `BlocksControls`
+import { InlineTextarea, BlocksControls } from 'react-tinacms-inline'
 import '../styles/hero.css'
 
 export function Hero() {
@@ -17,4 +18,26 @@ export function Hero() {
             </div>
         </div>
     )
+}
+
+// 12. Define the block component Object with Hero
+
+export const heroBlock = {
+    // 💡Here we're wrapping Hero in Block Controls to provide a UI for reordering, deleting,
+    // and adding new blocks. Notice the index being passed as props to BlockControls — this
+    //helps to keep track of the block order.
+    Component: ({ index }) => (
+        <BlocksControls index={index}>
+            <Hero />
+        </BlocksControls>
+    ),
+    // 13. Make a Template
+    template: {
+        label: 'Hero',
+        defaultItem: {
+            headline: 'Suspended in a Sunbeam',
+            subtext: 'Dispassionate extraterrestrial observer'
+        },
+        fields: []
+    }
 }
