@@ -2,7 +2,8 @@ import React from 'react'
 // 1. Import `useForm` and `usePlugin`
 import { useForm, usePlugin, useCMS } from 'tinacms'
 // 5. Import `InlineForm`
-import { InlineForm } from 'react-tinacms-inline'
+// 9. Import `InlineBlocks`
+import { InlineForm, InlineBlocks } from 'react-tinacms-inline'
 import { Hero } from './components/Hero'
 import data from './data/data.json'
 
@@ -28,7 +29,14 @@ export default function Home() {
         <div className="home">
             <InlineForm form={form}>
                 <Hero {...pageData} />
+                {/* 10. Import `InlineBlocks` */}
+                <InlineBlocks name="blocks" blocks={HOME_BLOCKS} />
             </InlineForm>
         </div>
     )
+}
+
+/* 11. Define BLOCKS constant (config) */
+const HOME_BLOCKS = {
+    /** We will define blocks here later */
 }
