@@ -10,10 +10,10 @@ export function Hero() {
             <div className="wrapper wrapper--narrow">
                 {/* 8. Replace `data` with Inline Fields */}
                 <h1>
-                    <InlineTextarea name="headline" />
+                    <InlineTextarea name="headline" focusRing={false} />
                 </h1>
                 <p>
-                    <InlineTextarea name="subtext" />
+                    <InlineTextarea name="subtext" focusRing={false} />
                 </p>
             </div>
         </div>
